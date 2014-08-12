@@ -19,17 +19,6 @@
 extern "C" {
 #endif
 
-#ifdef _WIN32
-#   include <WinSock2.h>
-#   include <ws2tcpip.h>
-#else
-#   include <sys/socket.h>
-#   include <sys/types.h>
-#   include <netdb.h>
-#   include <fcntl.h>
-#   include <unistd.h>
-#endif
-
 #ifdef __cplusplus
 #   include <cstdint>
 #else
