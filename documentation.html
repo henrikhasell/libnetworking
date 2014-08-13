@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>libnetworking</title>
+	</head>
+	<body>
+		<h1>libnetworking</h1>
+		<h2>Why I made libnetworking:</h2>
+		<p>
+			As a developer, I wanted to create a cross-platform,
+			multi-player video game for the PC.
+			I chose the C programming language because it is simple 
+			and easy to understand.
+			I realised there was no networking library that fit my 
+			specific needs: Lightweight, minimalistic, cross-platform 
+			and UDP-based networking.
+			Though networking libraries exist for C, I felt they were 
+			either too bloated, or did not contain features that 
+			I needed to have in my application: IPv6 compatibility, 
+			modularity and simplicity.
+		</p>
+		<h2>Why I did not use the Berkley Sockets API model:</h2>
+		<p>
+			It is implemented differently in Windows and UNIX. 
+			For further information, please see WinSock.
+			I have made cross-platform applications with this API in the past, 
+			but it was a nightmare to work with.
+			I reasoned it would be less work for me in the long run if I made 
+			my own compatibility layer for WinSock/UNIX to eliminate the 
+			differences between the API. This is in essence what libnetworking is.
+		</p>
+		<h2>This library is designed to address three issues:</h2>
+		<ol>
+			<li>
+				It removes the platform specific differences 
+				of the C BSD socket API, allowing for truly 
+				platform independent code.
+			</li>
+			<li>
+				It provides a easy to use networking API fully 
+				compatible with IPv6 IP addresses.
+			</li>
+			<li>
+				It contains a framework built from the ground up, 
+				designed for streaming information via UDP. 
+				This includes the ability to monitor and account 
+				for packet loss.
+			</li>
+		</ol>
+		<h2>Networking Sub-system:</h2>
+		<h3>Networking_Initialise</h3>
+		<code>int Networking_Initialise()</code>
+		<p>
+			This function initialises all of the libraries components.
+			It should be called before any other function from this library.
+		</p>
+		<code>
+			#include &lt;stdio.h&gt;<br/>
+			#include &lt;stddef.h&gt;<br/>
+			#include &lt;networking.h&gt;<br/>
+			<br/>
+			int main(int argc char *argv[]){<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; if(Networking_Initialise() &lt; 0){<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Failed to initialise the networking subsystem.\n");<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return EXIT_FAILURE;<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; }<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; Networking_Cleanup();<br/>
+			&nbsp;&nbsp;&nbsp;&nbsp; return EXIT_SUCCESS;<br/>
+			}<br/>
+		</code> 
+	</body>
+</html>
