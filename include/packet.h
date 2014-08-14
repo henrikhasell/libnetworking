@@ -30,11 +30,11 @@ extern "C" {
 typedef struct Packet{
 	 uint8_t data[PACKET_SIZE];
 }Packet;
-
+/*
 typedef struct PacketData{
     uint8_t data[PACKET_SIZE - PACKET_HEADER_SIZE]; // 184 bits (23 bytes)
 }PacketData;
-
+*/
 void NETWORKING_API_ENTRY Packet_WriteProtocol(Packet *packet, uint32_t protocol);
 void NETWORKING_API_ENTRY Packet_WriteType(Packet *packet, uint8_t type);
 void NETWORKING_API_ENTRY Packet_WriteNumber(Packet *packet, uint32_t number);
