@@ -1,8 +1,8 @@
 #include "networking.h"
 
 #ifdef _WIN32
+/* WSAStartup(), WSACleanup() */
 #   include <WinSock2.h>
-#   include <ws2tcpip.h>
 #endif
 
 int NETWORKING_API_ENTRY Networking_Initialise(){
