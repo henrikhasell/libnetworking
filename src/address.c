@@ -1,7 +1,15 @@
 #include "address.h"
 
-#ifndef _WIN32
-#   include <netdb.h>
+#ifdef __cplusplus
+#       include <cstring> /* memset */
+#else
+#       include <string.h> /* memset */
+#endif
+
+#ifdef _WIN32
+#   include <ws2tcpip.h> /* getaddrinfo */
+#else
+#   include <netdb.h> /* getaddrinfo */
 #endif
 
 int NETWORKING_API_ENTRY AddressInfo_ResolveHost(AddressInfo *address, char host[], char service[]){
