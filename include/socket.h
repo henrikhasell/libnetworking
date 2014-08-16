@@ -6,8 +6,8 @@
 #include "packet.h" /* Packet */
 
 /* This struct contains
-all the data necessary to
-represent a socket. */
+all the necessary data
+to represent a socket. */
 typedef struct Socket{
     int file_descriptor;
 }Socket;
