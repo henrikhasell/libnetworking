@@ -20,7 +20,7 @@ have this done to them before they are suitable to use.
 Returns 0 on success and -1 on failure. */
 int NETWORKING_API_ENTRY Socket_Create(Socket *socket_struct);
 /* This function destroys an initialised socket. All sockets should
-have this done to them when they are no longer required. 
+have this done to them when they are no longer required.
 Returns 0 on success and -1 on failure. */
 int NETWORKING_API_ENTRY Socket_Destroy(Socket *socket_struct);
 /* This pair of functions is used to send and receive data.

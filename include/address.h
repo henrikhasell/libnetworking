@@ -12,8 +12,8 @@
 /* This struct contains all the necessary
 data to represent an IP address. */
 typedef struct AddressInfo{
-	struct sockaddr address;
-	socklen_t address_size;
+    struct sockaddr address;
+    socklen_t address_size;
 }AddressInfo;
 
 #ifdef __cplusplus
@@ -31,7 +31,7 @@ int NETWORKING_API_ENTRY AddressInfo_ResolveService(AddressInfo *address, char s
 /* This function returns a non-zero if the two provided AddressInfo structures
 contain the same address. If the addresses do not match it returns 0. */
 int NETWORKING_API_ENTRY AddressInfo_IsEqual(AddressInfo *addr1, AddressInfo *addr2);
-/* This function allways returns -1 */
+/* This function always returns -1 */
 int NETWORKING_API_ENTRY AddressInfo_ToString(AddressInfo *address, char *string);
 #ifdef __cplusplus
 }

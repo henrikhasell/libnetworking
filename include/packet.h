@@ -2,11 +2,11 @@
 #define PACKET_H
 
 #ifdef __cplusplus
-#	include <cstdint> /* uint8_t, unt32_t */
-#	include <cstring> /* size_t */
+#   include <cstdint> /* uint8_t, unt32_t */
+#   include <cstring> /* size_t */
 #else
-#	include <stdint.h> /* uint8_t, uint32_t */
-#	include <string.h> /* size_t */
+#   include <stdint.h> /* uint8_t, uint32_t */
+#   include <string.h> /* size_t */
 #endif
 
 #include "networking.h" /* entry point */
@@ -27,7 +27,7 @@
 packet. It contains one field to avoid
 padding. */
 typedef struct Packet{
-	 uint8_t data[PACKET_SIZE];
+     uint8_t data[PACKET_SIZE];
 }Packet;
 
 #ifdef __cplusplus
@@ -42,7 +42,7 @@ match one of the following enumerations: PACKET_TYPE_STREAM, PACKET_TYPE_HEARTBE
 PACKET_TYPE_IMPORTANT and PACKET_TYPE_RESPONSE */
 void NETWORKING_API_ENTRY Packet_WriteType(Packet *packet, uint8_t type);
 /* Writes the specified value to the packet header. This value is intended
-to check that packets arrive in sequence and should be used as such. */ 
+to check that packets arrive in sequence and should be used as such. */
 void NETWORKING_API_ENTRY Packet_WriteNumber(Packet *packet, uint32_t number);
 /* Attempts to write the data into the packet's body. If the body is too
 small, the function will write as many bytes as possible. */
