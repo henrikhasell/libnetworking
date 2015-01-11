@@ -15,10 +15,6 @@
 #   define NETWORKING_API_ENTRY
 #endif
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Include the appropriate headers for
 both C and C++
 Standard types: uint8_t, uint32_t */
